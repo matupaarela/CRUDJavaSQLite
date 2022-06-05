@@ -6,8 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class ConnectionDAO {
+    // properties
     private String stringConn;
     private Connection conn = null;
+
+    // constructors
     public ConnectionDAO() {
         stringConn = "jdbc:sqlite:D:/Descargas/Documents/SQLite/crud-test.s3db";
         try {
@@ -19,6 +22,7 @@ public class ConnectionDAO {
         }
     }
 
+    // other methods
     public boolean executeNonQuery(String sqlQuery) {
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sqlQuery);
